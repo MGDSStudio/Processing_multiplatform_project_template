@@ -44,6 +44,7 @@ public class DesktopLauncher extends PApplet implements IEngineWithSpecificFunct
     @Override
     public void setup() {
         getSurface().setLocation(0,0);
+        getSurface().setTitle("Desktop version. MGDS Studio");
         processingMultiplatformLauncher.setup();
     }
 

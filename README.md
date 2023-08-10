@@ -58,6 +58,10 @@ WORK WITH ASSETS/DATA:
 
 Graphic, sounds, music, text files you want to use must be added in the app/src/main/Assets folder. To get the full path to this folder from the core module use Interface IEngineWithSpecificFunctions and function getPathToFileInProjectResources. See the example in ProcessingMultiplatformLauncher.java
 
+HOW TO CHANGE THE ANDROID APP ICON:
+
+Replace the file: app/src/main/ic_launcher-playstore.png with your icon.
+
 HOW TO DEVELOP:
 
 Write your main code at class ProcessingMultiplatformLauncher.java inside the core-module. There are functions setup() and draw() which work like the same functions in Processing IDE.

@@ -26,8 +26,6 @@ public class ProcessingMultiplatformLauncher {
         processing.frameRate(60);
         if (os == ANDROID) picture = processing.loadImage(engineWithSpecificFunctions.getPathToFileInProjectResources("Android_screen.png"));
         else picture = processing.loadImage(engineWithSpecificFunctions.getPathToFileInProjectResources("Desktop_screen.png"));
-
-
     }
 
     public void draw(){
