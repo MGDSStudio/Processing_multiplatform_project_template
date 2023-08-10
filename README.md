@@ -7,11 +7,10 @@ core - main code
 
 WHAT YOU SHOULD DO BEFORE START TO CREATE YOUR PROCESSING APPLICATION/GAME:
 
-1) Open local.properties
-2) Find line: sdk.dir
-3) Change the path to your Android SDK folder
-4) Rebuild the project
-5) Setup JDK. You can download the same JDK, that is used in this project or download any JDK. The version must be 1.8 or more.
+1) Create file local.properties
+2) Add line: sdk.dir=C\:\\Software\\Libraries\\Android. Use your path to the Android SDK folder.
+3) Rebuild the project
+4) Setup JDK in the preferences of the IDE. You can download the same JDK, that is used in this project or download any JDK. The version must be 1.8 or more.
 
 WHAT SHOULD YOU DO TO LAUNCH THE DESKTOP VERSION:
 
