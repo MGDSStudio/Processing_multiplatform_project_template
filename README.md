@@ -79,3 +79,4 @@ If you need to write a code that will be used only in Android version:
    To call this function inside the class ProcessingMultiplatformLauncher.java write: engineWithSpecificFunctions.yourFunctionName(yourParameters).
 
 Created by MGDS Studio. https://mgdsstudio.itch.io
+Original repo: https://github.com/MGDSStudio/Processing_multiplatform_project_template.git
