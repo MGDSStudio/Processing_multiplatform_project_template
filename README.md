@@ -1,5 +1,3 @@
-
-
 This template was created to give you an ability to make multiplatform projects using Intellij IDEa as IDE and Processing as the main library for graphic output and user interaction and Gradle for management.
 
 Project contains 3 modules:
