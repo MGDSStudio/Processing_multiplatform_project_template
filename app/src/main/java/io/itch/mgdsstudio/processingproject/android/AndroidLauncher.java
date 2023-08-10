@@ -26,6 +26,7 @@ public class AndroidLauncher extends PApplet implements IEngineWithSpecificFunct
 	public void setup() {
 		orientation(LANDSCAPE);
 		processingMultiplatformLauncher.setup();
+		System.out.println("Android version loaded successfully");
 	}
 
 
