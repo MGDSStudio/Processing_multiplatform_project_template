@@ -1,4 +1,4 @@
-This template was created to give you an ability to make multiplatform projects using Intellij IDEa as IDE and Processing as the main library for graphic output and user interaction and Gradle for management.
+This template was created to give you an ability to make multiplatform projects using Intellij IDEa as IDE and Processing as the main library for graphic output and user interaction and Gradle for management. If you have troubles you can watch the video that described: how to assembly this project and start to develop: https://www.youtube.com/watch?v=ZsmIdHLM5JY
 
 Project contains 3 modules:
 app - android module with activity initialization and launcher class.
