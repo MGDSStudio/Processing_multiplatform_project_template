@@ -1,16 +1,14 @@
-package io.itch.mgdsstudio.processingproject.desktop;
+/* Created by MGDS Studio
+https://mgdsstudio.itch.io
+ */
 
+package io.itch.mgdsstudio.processingproject.desktop;
 
 import io.itch.mgdsstudio.mainpackage.IEngineWithSpecificFunctions;
 import io.itch.mgdsstudio.mainpackage.ProcessingMultiplatformLauncher;
-
-
 import processing.core.PApplet;
-
 import processing.event.MouseEvent;
-
 import java.io.File;
-
 
 public class DesktopLauncher extends PApplet implements IEngineWithSpecificFunctions {
     private final String PATH_TO_ASSETS = "app"+ File.separator + "src"+ File.separator + "main"+ File.separator + "Assets" + File.separator ;

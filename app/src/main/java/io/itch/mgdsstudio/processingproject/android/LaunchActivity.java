@@ -1,5 +1,8 @@
-package io.itch.mgdsstudio.processingproject.android;
+/* Created by MGDS Studio
+https://mgdsstudio.itch.io
+ */
 
+package io.itch.mgdsstudio.processingproject.android;
 
 import android.content.Intent;
 import android.os.Bundle;

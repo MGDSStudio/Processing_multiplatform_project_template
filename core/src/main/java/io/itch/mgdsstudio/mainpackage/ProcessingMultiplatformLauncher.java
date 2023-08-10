@@ -1,3 +1,7 @@
+/* Created by MGDS Studio
+https://mgdsstudio.itch.io
+ */
+
 package io.itch.mgdsstudio.mainpackage;
 
 
