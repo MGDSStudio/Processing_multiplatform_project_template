@@ -49,9 +49,9 @@ Now you can select this configuration. Select your smartphone/tablet in the list
 
 WORK WITH LIBRARIES:
 
-1) If you need to add a library that will be used in the modules - add it simple in the globalLibs folder (for example Box2d for processing).
-2) If you need to add a library that will be used only in the desktop version - add it simple in desktop/libs folder.
-3) If you need to add a library that will be used only in the android version - add it simple in app/libs folder (for example Ketai library).
+1) If you need to add a library that will be used in the modules - add it simple in the globalLibs folder (for example Box2d for processing). If the library has a maven repo - add the implementation command in the dependencies inside the desktop/build.gradle file and in the file app/build.gradle.
+2) If you need to add a library that will be used only in the desktop version - add it simple in desktop/libs folder. If the library has a maven repo - add the implementation command in the dependencies inside the desktop/build.gradle file.
+3) If you need to add a library that will be used only in the android version - add it simple in app/libs folder (for example Ketai library). If the library has a maven repo - add the implementation command in the dependencies inside the app/build.gradle file.
 
 WORK WITH ASSETS/DATA:
 
