@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+}
+
+var keystorePropertiesFile = rootProject.file("keystore.properties");
+var keystorePropertiesUnsignedFile = rootProject.file("keystore_unsigned.properties");
+var keystoreProperties = new Properties()
+var keystorePropertiesUnsigned = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+keystorePropertiesUnsigned.load(new FileInputStream(keystorePropertiesUnsignedFile))
+boolean withObfuscation = false
+
+android {
+    if (!withObfuscation)  def enableProguardInReleaseBuilds = false // Instead of true
+    lintOptions {
+        checkReleaseBuilds true
+    }
+    signingConfigs {
+        release {
+            //storeFile file(keystoreProperties['storeFile'])
+            //storePassword keystoreProperties['storePassword']
+            //keyAlias keystoreProperties['keyAlias']
+            //keyPassword keystoreProperties['keyPassword']
+        }
+        unsigned {
+            storePassword = ""
+            keyAlias = ""
+            keyPassword = ""
+
+        }
+    }
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "io.itch.mgdsstudio.processingproject.mainpackage"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        multiDexEnabled true
+        versionName "0.99"
+        project.archivesBaseName = "My_processing_videogame-" + defaultConfig.versionName;
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            //debuggable true
+            //To create debuggable file with obfuscation uncomment the prev string
+
+            tasks.withType(JavaCompile) {
+                options.release = 8
+            }
+
+            if (withObfuscation) {
+                minifyEnabled true
+                shrinkResources = true
+                signingConfig signingConfigs.release
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+            else {
+
+                minifyEnabled false
+                shrinkResources = false
+                signingConfig signingConfigs.release
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+
+
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
+        unsignedBuild {
+            debuggable true
+            versionNameSuffix '-unsigned'
+
+            //signingConfig signingConfigs.unsigned
+            //signingConfig signingConfigs.unsigned
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_14
+        targetCompatibility JavaVersion.VERSION_14
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+    namespace 'com.mgdsstudio.blueberet'
+}
+
+dependencies {
+    //implementation 'org.p5android:processing-core:3.5.4'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    implementation 'androidx.navigation:navigation-ui:2.4.1'
+    String moduleName = project.name.toString()
+    implementation 'com.yandex.android:mobileads:5.10.0'
+    implementation 'com.yandex.android:mobmetricalib:5.2.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation fileTree(dir: "libs", include: ["*.jar"])        //Android specific libs must be added to the desktop/core dir. The are placed in your processing subdirectories.
+    String moduleDir = project.projectDir.toString();
+    int startModuleChar = moduleDir.indexOf(moduleName)
+    String projectDir = moduleDir.substring(0,startModuleChar)
+    String pathToGlobalLibrariesDir = (projectDir+'\\globalLibs');
+    File file = new File(pathToGlobalLibrariesDir)
+    println("Gradle says: path to the global libs dir is: " + pathToGlobalLibrariesDir + 'It exists: ' + file.exists() + ' and will be implemented to the ' + moduleName+ ' module')
+    implementation fileTree(dir: pathToGlobalLibrariesDir, include: ["*.jar"])
+}
+
+repositories {
+    mavenCentral()
+
+}

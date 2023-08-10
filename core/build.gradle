@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version 'unspecified'
+
+repositories {
+    //mavenCentral()
+}
+
+dependencies {
+    println("Remember! If you don't publish in Amazone app store - you need to change variable in Programm.java to upload normal title image" )
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    String moduleName = project.name.toString()
+    String moduleDir = project.projectDir.toString();
+    int startModuleChar = moduleDir.indexOf(moduleName)
+    String projectDir = moduleDir.substring(0,startModuleChar)
+    String pathToGlobalLibrariesDir = (projectDir+'\\globalLibs');
+    File file = new File(pathToGlobalLibrariesDir)
+    println("Gradle says: path to the global libs dir is: " + pathToGlobalLibrariesDir + 'It exists: ' + file.exists() + ' and will be implemented to the ' +moduleName + ' module')
+    implementation fileTree(dir: pathToGlobalLibrariesDir, include: ["*.jar"])
+
+
+    String pathToAndroidCoreLibraryFile = (projectDir+'\\app\\libs\\processing-core.jar');
+    File androidCoreLibrary = new File(pathToAndroidCoreLibraryFile)
+    println("Gradle says: path to the global libs dir is: " + pathToGlobalLibrariesDir + 'It exists: ' + androidCoreLibrary.exists() + ' and will be implemented to the ' +moduleName + ' module')
+    implementation files(androidCoreLibrary)
+
+}
+
+test {
+    useJUnitPlatform()
+}

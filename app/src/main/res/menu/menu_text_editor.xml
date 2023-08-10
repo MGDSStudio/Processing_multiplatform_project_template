@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".android.TextEditorActivity">
+
+    <item
+            android:id="@+id/arrowDown"
+            android:icon="@android:drawable/arrow_down_float"
+            android:title="@string/down"
+            app:showAsAction="ifRoom">
+    </item>
+    <item
+            android:id="@+id/arrowUp"
+            android:icon="@android:drawable/arrow_up_float"
+            android:title="@string/up"
+            app:showAsAction="ifRoom">
+    </item>
+    <!--
+        <item
+                android:id="@+id/action_open"
+                android:icon="@android:drawable/ic_menu_day"
+                android:orderInCategory="100"
+                app:showAsAction="ifRoom|withText"
+                android:title="@string/action_back" />
+        <item
+                android:id="@+id/action_save"
+                android:icon="@android:drawable/ic_menu_save"
+                android:orderInCategory="100"
+                app:showAsAction="ifRoom|withText"
+                android:title="@string/action_save" />-->
+    </menu>

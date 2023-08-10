@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version 'unspecified'
+
+repositories {
+    //mavenCentral()
+}
+
+dependencies {
+    String moduleName = project.name.toString()
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation fileTree(dir: "libs", include: ["*.jar"])        //Desktop specific libs must be added to the desktop/core dir. The are placed in your processing subdirectories.
+    String moduleDir = project.projectDir.toString();
+    int startModuleChar = moduleDir.indexOf(moduleName)
+    String projectDir = moduleDir.substring(0,startModuleChar)
+    String pathToGlobalLibrariesDir = (projectDir+'\\globalLibs');
+    File file = new File(pathToGlobalLibrariesDir)
+    println("Gradle says: path to the global libs dir is: " + pathToGlobalLibrariesDir + 'It exists: ' + file.exists() + ' and will be implemented to the  ' +moduleName + ' module')
+    implementation fileTree(dir: pathToGlobalLibrariesDir, include: ["*.jar"])
+    /*String pathToLib1 = (pathToGlobalLibrariesDir+'\\box2d_processing.jar');
+    String pathToLib2 = (pathToGlobalLibrariesDir+'\\jbox2d-library-2.2.1-ds.jar');
+    File file = new File(pathToLib1)
+
+    println("Try to implement: " + pathToLib1 + ". It exists: " + file.exists())
+    implementation files(pathToLib1)
+    implementation files(pathToLib2)*/
+    //implementation fileTree(dir: parent.absoluteProjectPath(':globalLibs'), include: ["*.jar"])
+    //implementation fileTree(dir: parent.absoluteProjectPath('globalLibs'), include: ["*.jar"])
+}
+
+test {
+    useJUnitPlatform()
+}

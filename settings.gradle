@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+
+
+dependencyResolutionManagement {
+    //It was for gradle 6.8
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+
+
+
+rootProject.name = "Processing_multiplatform_project_template"
+include ':app'
+include 'desktop'
+include 'core'
+

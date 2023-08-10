@@ -1,0 +1,6 @@
+This dir contains all the libraries we need for android specific purposes. You can create one or more activities only in this module, and they will be not visible from the core and desktop modules, so you will have no troubles with the compiler.
+As an example we have added the ketai.jar library for using all the touch screen abilities. Library was got from: http://ketai.org
+If you want another libs for android purposes add it here or implement in the build.gradle file int this module (app)
+
+BUT BE AWARE! processing-core.jar is used not only for the creating of the android apps but also as the main library in the core module. Do not rename it or be sure that the name of this library is the same as in the build.gradle in the app subdir.
+That's why you will not see compile errors when you will try to launch getActivity() from the desktop mode. But it will crush your program. For this purepose you should use the interface IEngine or use the structures like: if (ProgramMainController.getOS() == GlobalConstants.ANDROID) getActivity() else {/*do nothing*/}

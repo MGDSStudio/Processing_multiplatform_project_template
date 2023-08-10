@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Desktop launcher" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="io.itch.mgdsstudio.processingproject.desktop.DesktopLauncher" />
+    <module name="Processing_multiplatform_project_template.desktop.main" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
