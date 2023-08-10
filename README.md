@@ -7,10 +7,11 @@ core - main code
 
 WHAT YOU SHOULD DO BEFORE START TO CREATE YOUR PROCESSING APPLICATION/GAME:
 
-1) Setup JDK in the preferences of the IDE. You can download the same JDK, that is used in this project or download any JDK. The version must be 1.8 or more.
-2) Create file local.properties
-3) Add line: sdk.dir=C\:\\Software\\Libraries\\Android. Use your path to the Android SDK folder.
-4) Rebuild the project
+1) Setup JDK in the preferences of the Gradle in the IDE. You can download the same JDK, that is used in this project or download any JDK. The version must be 1.8 or more.
+2) Setup the same JDK in File->Project Structure->SDK:
+3) Create file local.properties
+4) Add line: sdk.dir=C\:\\Software\\Libraries\\Android. Use your path to the Android SDK folder.
+5) Rebuild the project
 
 WHAT SHOULD YOU DO TO LAUNCH THE DESKTOP VERSION:
 
@@ -21,7 +22,7 @@ WHAT SHOULD YOU DO TO LAUNCH THE DESKTOP VERSION:
 5) Select "Application"
 6) Fill the field 
 Name: - Desktop launcher
-JDK or JRE - select your JDK (Java development kit). The version must be 1.8 or more
+JDK or JRE - select your JDK (Java development kit). The version must be 1.8 or more. Prefer to use the same JDK as in the Project Structure properties.
 Select the module whose classpath should be used to run... - -cp Processing_multiplatform_project_template.desktop.main
 The fully qualified name of the class that contains the main method.. - io.itch.mgdsstudio.processingproject.desktop.DesktopLauncher
 7) Mark: Store as project file
